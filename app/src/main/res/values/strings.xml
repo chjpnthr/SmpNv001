@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">SmpNv001</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_searching">検索</string>
+    <string name="tab_text_setting">設定</string>
+
+    <string name="common_lbl_1"> 1 : </string>
+    <string name="common_lbl_2"> 2 : </string>
+    <string name="common_lbl_3"> 3 : </string>
+    <string name="common_lbl_4"> 4 : </string>
+    <string name="common_lbl_5"> 5 : </string>
+    <string name="common_lbl_6"> 6 : </string>
+    <string name="common_lbl_7"> 7 : </string>
+
+    <string name="setting_btn_Save">Save</string>
+    <string name="setting_txt_From">From</string>
+    <string name="setting_txt_To">To</string>
+    <string name="setting_hint_station">駅名</string>
+
+    <string name="searching_btn_close">閉じる</string>
+    <string name="searching_btn_searching_now">  今　　</string>
+    <string name="searching_btn_searching_5min"> 5分後</string>
+    <string name="searching_btn_searching_30min">30分後</string>
+    <string name="searching_btn_searching_60min">60分後</string>
+
+</resources>
