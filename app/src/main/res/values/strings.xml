@@ -19,9 +19,12 @@
     <string name="setting_hint_station">駅名</string>
 
     <string name="searching_btn_close">閉じる</string>
-    <string name="searching_btn_searching_now">  今　　</string>
-    <string name="searching_btn_searching_5min"> 5分後</string>
-    <string name="searching_btn_searching_30min">30分後</string>
-    <string name="searching_btn_searching_60min">60分後</string>
+    <string name="searching_btn_searching">検索</string>
+    <string name="searching_txt_searching_blank">未設定</string>
+    <string name="searching_rdGrp_now">今</string>
+    <string name="searching_rdGrp_5min">5分後</string>
+    <string name="searching_rdGrp_10min">10分後</string>
+    <string name="searching_rdGrp_60min">60分後</string>
+    <string name="searching_txt_url">URL</string>
 
 </resources>

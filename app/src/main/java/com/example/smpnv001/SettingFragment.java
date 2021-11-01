@@ -28,9 +28,6 @@ public class SettingFragment extends Fragment {
     //private String mParam1;
     //private String mParam2;
 
-    public final String PREF_KEY_FROM_1 = "keyFrom1";
-    public final String PREF_KEY_TO_1 = "keyTo1";
-
     public SettingFragment() {
         // Required empty public constructor
     }
@@ -75,8 +72,8 @@ public class SettingFragment extends Fragment {
         EditText edTxtTo1 = view.findViewById(R.id.settingEdTxtTo1);
 
         if (dataStore != null) {
-            edTxtFrm1.setText(dataStore.getString(PREF_KEY_FROM_1, getString(R.string.setting_txt_From)));
-            edTxtTo1.setText(dataStore.getString(PREF_KEY_TO_1, getString(R.string.setting_txt_To)));
+            edTxtFrm1.setText(dataStore.getString(MainActivity.PREF_KEY_FROM_1, getString(R.string.setting_txt_From)));
+            edTxtTo1.setText(dataStore.getString(MainActivity.PREF_KEY_TO_1, getString(R.string.setting_txt_To)));
         }
 
         btnSave.setOnClickListener(v -> {
@@ -86,8 +83,8 @@ public class SettingFragment extends Fragment {
             if (dataStore != null) {
                 SharedPreferences.Editor editor = dataStore.edit();
                 // Key: input, value: text
-                editor.putString(PREF_KEY_FROM_1, from1);
-                editor.putString(PREF_KEY_TO_1, to1);
+                editor.putString(MainActivity.PREF_KEY_FROM_1, from1);
+                editor.putString(MainActivity.PREF_KEY_TO_1, to1);
                 //editor.commit();
                 editor.apply();
             }
