@@ -28,6 +28,20 @@ public class SettingFragment extends Fragment {
     //private String mParam1;
     //private String mParam2;
 
+    Button btnSave;
+    EditText edTxtFrm1;
+    EditText edTxtTo1;
+    EditText edTxtFrm2;
+    EditText edTxtTo2;
+    EditText edTxtFrm3;
+    EditText edTxtTo3;
+    EditText edTxtFrm4;
+    EditText edTxtTo4;
+    EditText edTxtFrm5;
+    EditText edTxtTo5;
+    EditText edTxtFrm6;
+    EditText edTxtTo6;
+
     public SettingFragment() {
         // Required empty public constructor
     }
@@ -67,24 +81,64 @@ public class SettingFragment extends Fragment {
         // ファイル名:DataStore
         SharedPreferences dataStore = getContext().getSharedPreferences("DataStore", Context.MODE_PRIVATE);
 
-        Button btnSave = view.findViewById(R.id.settingBtnSave);
-        EditText edTxtFrm1 = view.findViewById(R.id.settingEdTxtFrom1);
-        EditText edTxtTo1 = view.findViewById(R.id.settingEdTxtTo1);
+        btnSave = view.findViewById(R.id.settingBtnSave);
+        edTxtFrm1 = view.findViewById(R.id.settingEdTxtFrom1);
+        edTxtTo1 = view.findViewById(R.id.settingEdTxtTo1);
+        edTxtFrm2 = view.findViewById(R.id.settingEdTxtFrom2);
+        edTxtTo2 = view.findViewById(R.id.settingEdTxtTo2);
+        edTxtFrm3 = view.findViewById(R.id.settingEdTxtFrom3);
+        edTxtTo3 = view.findViewById(R.id.settingEdTxtTo3);
+        edTxtFrm4 = view.findViewById(R.id.settingEdTxtFrom4);
+        edTxtTo4 = view.findViewById(R.id.settingEdTxtTo4);
+        edTxtFrm5 = view.findViewById(R.id.settingEdTxtFrom5);
+        edTxtTo5 = view.findViewById(R.id.settingEdTxtTo5);
+        edTxtFrm6 = view.findViewById(R.id.settingEdTxtFrom6);
+        edTxtTo6 = view.findViewById(R.id.settingEdTxtTo6);
 
         if (dataStore != null) {
             edTxtFrm1.setText(dataStore.getString(MainActivity.PREF_KEY_FROM_1, getString(R.string.setting_txt_From)));
             edTxtTo1.setText(dataStore.getString(MainActivity.PREF_KEY_TO_1, getString(R.string.setting_txt_To)));
+            edTxtFrm2.setText(dataStore.getString(MainActivity.PREF_KEY_FROM_2, getString(R.string.setting_txt_From)));
+            edTxtTo2.setText(dataStore.getString(MainActivity.PREF_KEY_TO_2, getString(R.string.setting_txt_To)));
+            edTxtFrm3.setText(dataStore.getString(MainActivity.PREF_KEY_FROM_3, getString(R.string.setting_txt_From)));
+            edTxtTo3.setText(dataStore.getString(MainActivity.PREF_KEY_TO_3, getString(R.string.setting_txt_To)));
+            edTxtFrm4.setText(dataStore.getString(MainActivity.PREF_KEY_FROM_4, getString(R.string.setting_txt_From)));
+            edTxtTo4.setText(dataStore.getString(MainActivity.PREF_KEY_TO_4, getString(R.string.setting_txt_To)));
+            edTxtFrm5.setText(dataStore.getString(MainActivity.PREF_KEY_FROM_5, getString(R.string.setting_txt_From)));
+            edTxtTo5.setText(dataStore.getString(MainActivity.PREF_KEY_TO_5, getString(R.string.setting_txt_To)));
+            edTxtFrm6.setText(dataStore.getString(MainActivity.PREF_KEY_FROM_6, getString(R.string.setting_txt_From)));
+            edTxtTo6.setText(dataStore.getString(MainActivity.PREF_KEY_TO_6, getString(R.string.setting_txt_To)));
         }
 
         btnSave.setOnClickListener(v -> {
             String from1 = edTxtFrm1.getText().toString();
             String to1 = edTxtTo1.getText().toString();
+            String from2 = edTxtFrm2.getText().toString();
+            String to2 = edTxtTo2.getText().toString();
+            String from3 = edTxtFrm3.getText().toString();
+            String to3 = edTxtTo3.getText().toString();
+            String from4 = edTxtFrm4.getText().toString();
+            String to4 = edTxtTo4.getText().toString();
+            String from5 = edTxtFrm5.getText().toString();
+            String to5 = edTxtTo5.getText().toString();
+            String from6 = edTxtFrm6.getText().toString();
+            String to6 = edTxtTo6.getText().toString();
 
             if (dataStore != null) {
                 SharedPreferences.Editor editor = dataStore.edit();
                 // Key: input, value: text
                 editor.putString(MainActivity.PREF_KEY_FROM_1, from1);
                 editor.putString(MainActivity.PREF_KEY_TO_1, to1);
+                editor.putString(MainActivity.PREF_KEY_FROM_2, from2);
+                editor.putString(MainActivity.PREF_KEY_TO_2, to2);
+                editor.putString(MainActivity.PREF_KEY_FROM_3, from3);
+                editor.putString(MainActivity.PREF_KEY_TO_3, to3);
+                editor.putString(MainActivity.PREF_KEY_FROM_4, from4);
+                editor.putString(MainActivity.PREF_KEY_TO_4, to4);
+                editor.putString(MainActivity.PREF_KEY_FROM_5, from5);
+                editor.putString(MainActivity.PREF_KEY_TO_5, to5);
+                editor.putString(MainActivity.PREF_KEY_FROM_6, from6);
+                editor.putString(MainActivity.PREF_KEY_TO_6, to6);
                 //editor.commit();
                 editor.apply();
             }

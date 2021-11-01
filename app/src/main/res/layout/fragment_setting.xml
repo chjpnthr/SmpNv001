@@ -5,8 +5,9 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="vertical"
     tools:context=".SettingFragment">
-
+;
     <Button
         android:id="@+id/settingBtnSave"
         android:layout_width="wrap_content"
@@ -21,17 +22,16 @@
         android:id="@+id/settingTxtLbl1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="10dp"
         android:text="@string/common_lbl_1"
         app:layout_constraintStart_toStartOf="@+id/settingBtnSave"
         app:layout_constraintTop_toBottomOf="@+id/settingBtnSave" />
-
     <EditText
         android:id="@+id/settingEdTxtFrom1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:ems="8"
         android:hint="@string/setting_hint_station"
         android:importantForAutofill="no"
@@ -44,7 +44,7 @@
         android:id="@+id/settingEdTxtTo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:ems="8"
         android:hint="@string/setting_hint_station"
         android:inputType="textPersonName"
@@ -66,27 +66,167 @@
         android:id="@+id/settingEdTxtFrom2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:ems="8"
         android:hint="@string/setting_hint_station"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="@string/setting_txt_From"
-        app:layout_constraintStart_toEndOf="@+id/settingTxtLbl2"
+        app:layout_constraintStart_toEndOf="@+id/settingTxtLbl1"
         app:layout_constraintTop_toTopOf="@+id/settingTxtLbl2"
         android:importantForAutofill="no" />
     <EditText
         android:id="@+id/settingEdTxtTo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
         android:ems="8"
         android:hint="@string/setting_hint_station"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="@string/setting_txt_To"
-        app:layout_constraintStart_toEndOf="@+id/settingEdTxtFrom2"
+        app:layout_constraintStart_toEndOf="@+id/settingEdTxtFrom1"
         app:layout_constraintTop_toTopOf="@+id/settingTxtLbl2"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/settingTxtLbl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/common_lbl_3"
+        app:layout_constraintStart_toStartOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toBottomOf="@+id/settingEdTxtFrom2" />
+    <EditText
+        android:id="@+id/settingEdTxtFrom3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_From"
+        app:layout_constraintStart_toEndOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl3"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/settingEdTxtTo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_To"
+        app:layout_constraintStart_toEndOf="@+id/settingEdTxtFrom1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl3"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/settingTxtLbl4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/common_lbl_4"
+        app:layout_constraintStart_toStartOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toBottomOf="@+id/settingEdTxtFrom3" />
+    <EditText
+        android:id="@+id/settingEdTxtFrom4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_From"
+        app:layout_constraintStart_toEndOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl4"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/settingEdTxtTo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_To"
+        app:layout_constraintStart_toEndOf="@+id/settingEdTxtFrom1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl4"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/settingTxtLbl5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/common_lbl_5"
+        app:layout_constraintStart_toStartOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toBottomOf="@+id/settingEdTxtFrom4" />
+    <EditText
+        android:id="@+id/settingEdTxtFrom5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_From"
+        app:layout_constraintStart_toEndOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl5"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/settingEdTxtTo5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_To"
+        app:layout_constraintStart_toEndOf="@+id/settingEdTxtFrom1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl5"
+        android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/settingTxtLbl6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/common_lbl_6"
+        app:layout_constraintStart_toStartOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toBottomOf="@+id/settingEdTxtFrom5" />
+    <EditText
+        android:id="@+id/settingEdTxtFrom6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_From"
+        app:layout_constraintStart_toEndOf="@+id/settingTxtLbl1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl6"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/settingEdTxtTo6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:ems="8"
+        android:hint="@string/setting_hint_station"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/setting_txt_To"
+        app:layout_constraintStart_toEndOf="@+id/settingEdTxtFrom1"
+        app:layout_constraintTop_toTopOf="@+id/settingTxtLbl6"
         android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

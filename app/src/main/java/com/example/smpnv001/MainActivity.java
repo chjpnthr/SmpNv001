@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.example.smpnv001.ui.main.SectionsPagerAdapter;
 import com.example.smpnv001.databinding.ActivityMainBinding;
@@ -24,11 +25,21 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String PREF_KEY_FROM_1 = "keyFrom1";
     public static final String PREF_KEY_TO_1 = "keyTo1";
+    public static final String PREF_KEY_FROM_2 = "keyFrom2";
+    public static final String PREF_KEY_TO_2 = "keyTo2";
+    public static final String PREF_KEY_FROM_3 = "keyFrom3";
+    public static final String PREF_KEY_TO_3 = "keyTo3";
+    public static final String PREF_KEY_FROM_4 = "keyFrom4";
+    public static final String PREF_KEY_TO_4 = "keyTo4";
+    public static final String PREF_KEY_FROM_5 = "keyFrom5";
+    public static final String PREF_KEY_TO_5 = "keyTo5";
+    public static final String PREF_KEY_FROM_6 = "keyFrom6";
+    public static final String PREF_KEY_TO_6 = "keyTo6";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 

@@ -15,8 +15,12 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="@string/searching_btn_close"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <requestFocus/>
+
     <RadioGroup
         android:id="@+id/searchingRdGrpTime"
         android:layout_width="wrap_content"
@@ -67,13 +71,101 @@
         android:id="@+id/searchingBtnSearch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="5dp"
-        android:focusableInTouchMode="true"
         android:text="@string/searching_btn_searching"
-        app:layout_constraintStart_toEndOf="@+id/searchingTxtSearch1"
-        app:layout_constraintTop_toBottomOf="@+id/searchingTxtUrl"  />
-    <requestFocus/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtUrl" />
+    <TextView
+        android:id="@+id/searchingTxtSearch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/searching_txt_searching_blank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch1" />
+    <Button
+        android:id="@+id/searchingBtnSearch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/searching_btn_searching"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch1"  />
+    <TextView
+        android:id="@+id/searchingTxtSearch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/searching_txt_searching_blank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch2" />
+    <Button
+        android:id="@+id/searchingBtnSearch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/searching_btn_searching"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch2" />
+    <TextView
+        android:id="@+id/searchingTxtSearch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/searching_txt_searching_blank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch3" />
+    <Button
+        android:id="@+id/searchingBtnSearch4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/searching_btn_searching"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch3" />
+    <TextView
+        android:id="@+id/searchingTxtSearch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/searching_txt_searching_blank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch4" />
+    <Button
+        android:id="@+id/searchingBtnSearch5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/searching_btn_searching"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch4" />
+    <TextView
+        android:id="@+id/searchingTxtSearch6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/searching_txt_searching_blank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch5" />
+    <Button
+        android:id="@+id/searchingBtnSearch6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/searching_btn_searching"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchingTxtSearch5" />
 
     <WebView
         android:id="@+id/searchingWbVw"

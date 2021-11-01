@@ -1,6 +1,8 @@
 package com.example.smpnv001;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -50,6 +52,7 @@ public class SearchingFragment extends Fragment {
     private static final String baseUri = "http://api.ekispert.jp/v1/json/search/course/light";
 
     private Handler handler = new Handler();
+    private volatile String errMes = "";
     // 画面
     // 共通
     Button btnClose;
@@ -58,6 +61,16 @@ public class SearchingFragment extends Fragment {
     TextView txtVwUrl;
     TextView txtVwSearch1;
     Button btnSearch1;
+    TextView txtVwSearch2;
+    Button btnSearch2;
+    TextView txtVwSearch3;
+    Button btnSearch3;
+    TextView txtVwSearch4;
+    Button btnSearch4;
+    TextView txtVwSearch5;
+    Button btnSearch5;
+    TextView txtVwSearch6;
+    Button btnSearch6;
     WebView myWebView;
 
     public SearchingFragment() {
@@ -102,14 +115,27 @@ public class SearchingFragment extends Fragment {
         btnClose = view.findViewById(R.id.searchingBtnClose);
         rdGrpTime = view.findViewById(R.id.searchingRdGrpTime);
         txtVwUrl = view.findViewById(R.id.searchingTxtUrl);
+        myWebView = (WebView) view.findViewById(R.id.searchingWbVw);
         txtVwSearch1 = view.findViewById(R.id.searchingTxtSearch1);
         btnSearch1 = view.findViewById(R.id.searchingBtnSearch1);
-        myWebView = (WebView) view.findViewById(R.id.searchingWbVw);
+        txtVwSearch2 = view.findViewById(R.id.searchingTxtSearch2);
+        btnSearch2 = view.findViewById(R.id.searchingBtnSearch2);
+        txtVwSearch3 = view.findViewById(R.id.searchingTxtSearch3);
+        btnSearch3 = view.findViewById(R.id.searchingBtnSearch3);
+        txtVwSearch4 = view.findViewById(R.id.searchingTxtSearch4);
+        btnSearch4 = view.findViewById(R.id.searchingBtnSearch4);
+        txtVwSearch5 = view.findViewById(R.id.searchingTxtSearch5);
+        btnSearch5 = view.findViewById(R.id.searchingBtnSearch5);
+        txtVwSearch6 = view.findViewById(R.id.searchingTxtSearch6);
+        btnSearch6 = view.findViewById(R.id.searchingBtnSearch6);
 
         // 閉じるボタンリスナー登録
         btnClose.setOnClickListener(v -> {
             myWebView.setVisibility(View.INVISIBLE);
             this.setButtonsVisibility(true);
+            if (errMes != null && !"".equals(errMes)) {
+                txtVwUrl.setText(errMes);
+            }
         });
 
         // 検索1
@@ -123,8 +149,88 @@ public class SearchingFragment extends Fragment {
             btnSearch1.setEnabled(true);
             txtVwSearch1.setText(from1 + " →→→ " + to1);
             // 検索ボタンリスナー登録
-            btnSearch1.setOnClickListener(v -> {
+            btnSearch1.setOnClickListener(v1 -> {
                 this.search(from1, to1);
+                this.setButtonsVisibility(false);
+            });
+        }
+        // 検索2
+        String from2 = dataStore.getString(MainActivity.PREF_KEY_FROM_2, getString(R.string.setting_txt_From));
+        String to2 = dataStore.getString(MainActivity.PREF_KEY_TO_2, getString(R.string.setting_txt_To));
+        if (from2 == null || "".equals(from2) || getString(R.string.setting_txt_From).equals(from2)
+                || to2 == null || "".equals(to2) || getString(R.string.setting_txt_To).equals(to2)) {
+            btnSearch2.setEnabled(false);
+            txtVwSearch2.setText(getString(R.string.searching_txt_searching_blank));
+        } else {
+            btnSearch2.setEnabled(true);
+            txtVwSearch2.setText(from2 + " →→→ " + to2);
+            // 検索ボタンリスナー登録
+            btnSearch2.setOnClickListener(v2 -> {
+                this.search(from2, to2);
+                this.setButtonsVisibility(false);
+            });
+        }
+        // 検索3
+        String from3 = dataStore.getString(MainActivity.PREF_KEY_FROM_3, getString(R.string.setting_txt_From));
+        String to3 = dataStore.getString(MainActivity.PREF_KEY_TO_3, getString(R.string.setting_txt_To));
+        if (from3 == null || "".equals(from3) || getString(R.string.setting_txt_From).equals(from3)
+                || to3 == null || "".equals(to3) || getString(R.string.setting_txt_To).equals(to3)) {
+            btnSearch3.setEnabled(false);
+            txtVwSearch3.setText(getString(R.string.searching_txt_searching_blank));
+        } else {
+            btnSearch3.setEnabled(true);
+            txtVwSearch3.setText(from3 + " →→→ " + to3);
+            // 検索ボタンリスナー登録
+            btnSearch3.setOnClickListener(v3 -> {
+                this.search(from3, to3);
+                this.setButtonsVisibility(false);
+            });
+        }
+        // 検索4
+        String from4 = dataStore.getString(MainActivity.PREF_KEY_FROM_4, getString(R.string.setting_txt_From));
+        String to4 = dataStore.getString(MainActivity.PREF_KEY_TO_4, getString(R.string.setting_txt_To));
+        if (from4 == null || "".equals(from4) || getString(R.string.setting_txt_From).equals(from4)
+                || to4 == null || "".equals(to4) || getString(R.string.setting_txt_To).equals(to4)) {
+            btnSearch4.setEnabled(false);
+            txtVwSearch4.setText(getString(R.string.searching_txt_searching_blank));
+        } else {
+            btnSearch4.setEnabled(true);
+            txtVwSearch4.setText(from4 + " →→→ " + to4);
+            // 検索ボタンリスナー登録
+            btnSearch4.setOnClickListener(v4 -> {
+                this.search(from4, to4);
+                this.setButtonsVisibility(false);
+            });
+        }
+        // 検索5
+        String from5 = dataStore.getString(MainActivity.PREF_KEY_FROM_5, getString(R.string.setting_txt_From));
+        String to5 = dataStore.getString(MainActivity.PREF_KEY_TO_5, getString(R.string.setting_txt_To));
+        if (from5 == null || "".equals(from5) || getString(R.string.setting_txt_From).equals(from5)
+                || to5 == null || "".equals(to5) || getString(R.string.setting_txt_To).equals(to5)) {
+            btnSearch5.setEnabled(false);
+            txtVwSearch5.setText(getString(R.string.searching_txt_searching_blank));
+        } else {
+            btnSearch5.setEnabled(true);
+            txtVwSearch5.setText(from5 + " →→→ " + to5);
+            // 検索ボタンリスナー登録
+            btnSearch5.setOnClickListener(v5 -> {
+                this.search(from5, to5);
+                this.setButtonsVisibility(false);
+            });
+        }
+        // 検索6
+        String from6 = dataStore.getString(MainActivity.PREF_KEY_FROM_6, getString(R.string.setting_txt_From));
+        String to6 = dataStore.getString(MainActivity.PREF_KEY_TO_6, getString(R.string.setting_txt_To));
+        if (from6 == null || "".equals(from6) || getString(R.string.setting_txt_From).equals(from6)
+                || to6 == null || "".equals(to6) || getString(R.string.setting_txt_To).equals(to6)) {
+            btnSearch6.setEnabled(false);
+            txtVwSearch6.setText(getString(R.string.searching_txt_searching_blank));
+        } else {
+            btnSearch6.setEnabled(true);
+            txtVwSearch6.setText(from6 + " →→→ " + to6);
+            // 検索ボタンリスナー登録
+            btnSearch6.setOnClickListener(v6 -> {
+                this.search(from6, to6);
                 this.setButtonsVisibility(false);
             });
         }
@@ -139,15 +245,16 @@ public class SearchingFragment extends Fragment {
             Visibility = View.INVISIBLE;
         }
         btnSearch1.setVisibility(Visibility);
-
-
-
-
-
-
+        btnSearch2.setVisibility(Visibility);
+        btnSearch3.setVisibility(Visibility);
+        btnSearch4.setVisibility(Visibility);
+        btnSearch5.setVisibility(Visibility);
+        btnSearch6.setVisibility(Visibility);
     }
 
     private void search(String from, String to) {
+        errMes = "";
+        txtVwUrl.setText(errMes);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -191,13 +298,9 @@ public class SearchingFragment extends Fragment {
                         }
                     });
                 } catch (JSONException je) {
-                    txtVwUrl.setText("JSONエラー");
-                    myWebView.setVisibility(View.INVISIBLE);
-                    return;
+                    errMes = "JSONエラー";
                 } catch (Exception e) {
-                    txtVwUrl.setText("通信エラー");
-                    myWebView.setVisibility(View.INVISIBLE);
-                    return;
+                    errMes = "通信エラー";
                 }
             }
         });
